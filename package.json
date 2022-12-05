@@ -1,0 +1,101 @@
+{
+	"name": "taro3-react-template",
+	"version": "1.0.0",
+	"private": true,
+	"description": "taro3-react多端项目模板",
+	"templateInfo": {
+		"name": "mobx",
+		"typescript": true,
+		"css": "sass"
+	},
+	"scripts": {
+		"build:weapp": "taro build --type weapp",
+		"dev:weapp": "pnpm build:weapp --watch",
+		"build:h5": "taro build --type h5",
+		"dev:h5": "pnpm run build:h5 --watch",
+		"new": "plop --plopfile generators/index.js",
+		"preview:weapp": "npx mpa",
+		"preview:weapp-local-watch": "pnpm preview:weapp && pnpm dev:weapp"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged && lint-staged",
+			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"**/*.js": "eslint --ext .js",
+		"src/**/*.ts": "eslint --ext .ts",
+		"src/**/*.tsx": "eslint --ext .tsx",
+		"**/*.md": "markdownlint-cli2 .md"
+	},
+	"browserslist": [
+		"last 3 versions",
+		"Android >= 4.1",
+		"ios >= 8"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"@babel/runtime": "^7.7.7",
+		"@tarojs/components": "3.5.5",
+		"@tarojs/helper": "3.5.5",
+		"@tarojs/plugin-framework-react": "3.5.5",
+		"@tarojs/plugin-platform-weapp": "3.5.5",
+		"@tarojs/react": "3.5.5",
+		"@tarojs/router": "3.5.5",
+		"@tarojs/runtime": "3.5.5",
+		"@tarojs/shared": "3.5.5",
+		"@tarojs/taro": "3.5.5",
+		"@tarojs/taro-h5": "3.5.5",
+		"evil-eval": "^0.0.1",
+		"mobx": "^4.8.0",
+		"mobx-react": "^6.1.4",
+		"nervjs": "^1.5.7",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"taro-x-ui": "0.0.1",
+		"wtils": "^0.2.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.8.0",
+		"@commitlint/cli": "^11.0.0",
+		"@commitlint/config-conventional": "^11.0.0",
+		"@commitlint/lint": "^17.0.3",
+		"@pmmmwh/react-refresh-webpack-plugin": "0.5.4",
+		"@tarojs/cli": "3.5.5",
+		"@tarojs/webpack5-runner": "3.5.5",
+		"@tarox/plugin-init-app": "^1.0.0-alpha.16",
+		"@types/react": "18.0.15",
+		"@types/webpack-env": "^1.13.6",
+		"@typescript-eslint/eslint-plugin": "^4.0.0",
+		"@typescript-eslint/parser": "^4.0.0",
+		"@youtils/commitlint-plugin-standard": "^0.0.1",
+		"@youtils/prettier-config-standard": "^1.0.1",
+		"babel-loader": "^8.2.5",
+		"babel-preset-taro": "3.5.5",
+		"cache-loader": "^4.1.0",
+		"cross-env": "^7.0.2",
+		"eslint": "^6.8.0",
+		"eslint-config-taro": "3.5.5",
+		"eslint-plugin-import": "^2.12.0",
+		"eslint-plugin-react": "^7.8.2",
+		"eslint-plugin-react-hooks": "^1.6.1",
+		"husky": "^4.3.0",
+		"lint-staged": "^10.4.0",
+		"markdownlint": "^0.25.1",
+		"markdownlint-cli2": "^0.4.0",
+		"miniprogram-automator": "^0.11.0",
+		"miniprogram-automator-scripts": "0.0.2",
+		"plop": "^2.7.4",
+		"prettier": "^2.1.2",
+		"pretty-quick": "^3.0.2",
+		"react-refresh": "0.11.0",
+		"stylelint": "9.3.0",
+		"taro-plugin-compiler-optimization": "^1.0.1",
+		"taro-plugin-dotenv": "^1.0.0",
+		"thread-loader": "^3.0.4",
+		"typescript": "^4.1.0",
+		"webpack": "^5.74.0"
+	}
+}
